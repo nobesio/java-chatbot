@@ -27,10 +27,12 @@ public class ConceptImpl implements Concept {
         Double totalNumberUniqueWords = 0.0;
         Double interceptionNumberUniquerWords = 0.0;
 
-        Set<String> externalStimulusUniqueWords = Set.of(externalStimulus.split(" "));
+        Set<String> externalStimulusUniqueWords = Set.of(externalStimulus.toLowerCase().split(" "));
         totalNumberUniqueWords+= externalStimulusUniqueWords.size();
         for (String stimulus: this.stimuli) {
-            Set<String> internalStimulusUniqueWords = new HashSet<String>(Arrays.asList(stimulus.split(" ")));
+            Set<String> internalStimulusUniqueWords = new HashSet<String>(Arrays.asList(
+                    stimulus.toLowerCase().split(" "))
+            );
             totalNumberUniqueWords+= internalStimulusUniqueWords.size();
 
             internalStimulusUniqueWords.retainAll(externalStimulusUniqueWords);
