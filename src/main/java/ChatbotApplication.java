@@ -21,26 +21,26 @@ public class ChatbotApplication {
 
     private static Brain initializeDukeBrain() {
         List<Concept> concepts = new ArrayList<>();
-        concepts.add(Concept.createConcept("James Gosling", List.of(
+        concepts.add(ConceptImpl.createConcept("James Gosling", List.of(
             "who is the author of java ?",
             "who created java ?",
             "who wrote java ?",
             "name java author"
         )));
-        concepts.add(Concept.createConcept("1995", List.of(
+        concepts.add(ConceptImpl.createConcept("1995", List.of(
             "when was java released for the first time ?",
             "when was java created ?",
             "when was java written ?",
             "java creation date"
         )));
-        concepts.add(Concept.createConcept("17", List.of(
+        concepts.add(ConceptImpl.createConcept("17", List.of(
             "what is java latest version ?",
             "what is the latest version of java ?",
             "what is the last number java version ?",
             "java version number"
         )));
 
-        Brain duke = Brain.createBrain(concepts);
+        Brain duke = BrainImpl.createBrain(concepts);
         return duke;
     }
 
